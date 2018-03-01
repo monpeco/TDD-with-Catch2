@@ -9,6 +9,7 @@ unsigned int factorial(unsigned int num){
 
 
 TEST_CASE( "Factorial are computed", "[factorial]" ) {
+    REQUIRE( factorial(0) == 1 );
     REQUIRE( factorial(1) == 1 );
 }
 
@@ -25,7 +26,24 @@ Run:
   
 Output:
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+factorial.exe is a Catch v2.1.2 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Factorial are computed
+-------------------------------------------------------------------------------
+factorial.cpp:11
+...............................................................................
+
+factorial.cpp:12: FAILED:
+  REQUIRE( factorial(0) == 1 )
+with expansion:
+  0 == 1
+
 ===============================================================================
-All tests passed (1 assertion in 1 test case)
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
 
 */
