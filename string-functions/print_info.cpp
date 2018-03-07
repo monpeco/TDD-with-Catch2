@@ -3,16 +3,17 @@
 #include <string>
 #include "catch.hpp"
 
-std::string print_info(std::string p);
+std::string print_info(std::string* stringArray, unsigned int size);
 
 
 TEST_CASE("print simple","print a simple string based on a parameter"){
-  REQUIRE( print_info("gg") == " ");
+  std::string s[] = {"hi", "there", "here", "another"};
+  REQUIRE( print_info(s,2) == "hi");
   
 }
 
 
-std::string print_info(std::string p){
-  
-  return " ";
+std::string print_info(std::string* stringArray, unsigned int size){
+  std::string result = (*stringArray);
+  return result;
 }
