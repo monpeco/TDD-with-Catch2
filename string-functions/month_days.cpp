@@ -48,7 +48,7 @@ std::string print_months(std::string file_name){
   
   while(getline(is, file_line))
   {
-    result += "There are [" +  print_days(file_line) + "] days in [" + print_month(file_line) + "].";
+    result += "There are " +  print_days(file_line) + " days in " + print_month(file_line) + ".";
   }
     
   return result;
