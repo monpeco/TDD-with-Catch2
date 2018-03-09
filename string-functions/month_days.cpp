@@ -6,6 +6,7 @@
 
 std::string print_months(std::string file_name);
 std::string print_month(std::string file_line);
+std::string print_days(std::string file_line);
 
 TEST_CASE("Test print_months()", "Print the name and number days of the monts in the months file"){
   REQUIRE( print_months("months.txt") ==  "There are 31 days in January."
@@ -47,7 +48,7 @@ std::string print_months(std::string file_name){
   
   while(getline(is, file_line))
   {
-    result += "There are 30 days in [" + print_month(file_line) + "].";
+    result += "There are [" +  print_days(file_line) + "] days in [" + print_month(file_line) + "].";
   }
     
   return result;
@@ -69,7 +70,20 @@ std::string print_month(std::string file_line){
   return month;
 }
 
+TEST_CASE("Test print_days()", "Prints the number of days, extracted of a file_line"){
+  REQUIRE( print_days("January 31") ==  "31");
+  REQUIRE( print_days("February 28") ==  "28");
+  REQUIRE( print_days("April 30") ==  "30");
+}
 
+/*  String -> String
+*   Extracts the days number out of a file_line 
+*/
+std::string print_days(std::string file_line){
+  std::string days = "30";
+  
+  return days;
+}
 
 /*
 
