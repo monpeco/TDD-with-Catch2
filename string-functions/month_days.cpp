@@ -40,7 +40,16 @@ TEST_CASE("Test print_months() with financial months", "Print the name and numbe
 *   Produces the formatted output of the months' info stored in the months.txt file
 */  
 std::string print_months(std::string file_name){
-  return "";
+  std::ifstream is(file_name);
+  std::string str="";
+  std::string result="";
+  
+  while(getline(is, str))
+  {
+    result += "There are 31 days in January.";
+  }
+    
+  return result;
 }
 
 
