@@ -85,7 +85,11 @@ TEST_CASE("Test print_days()", "Prints the number of days, extracted of a file_l
 */
 std::string print_days(std::string file_line){
   std::string days = "30";
-  
+  for(int i = 0; i < file_line.size(); ++i) {
+    if(file_line[i] == ' '){
+      days = file_line.substr(i+1, file_line.size());
+    }
+  }
   return days;
 }
 
