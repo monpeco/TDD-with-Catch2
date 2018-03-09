@@ -66,7 +66,11 @@ TEST_CASE("Test print_month()", "Prints the month, extracted of a file_line"){
 */
 std::string print_month(std::string file_line){
   std::string month = "March";
-  
+  for(int i = 0; i < file_line.size(); ++i) {
+    if(file_line[i] == ' '){
+      month = file_line.substr(0, i);
+    }
+  }
   return month;
 }
 
