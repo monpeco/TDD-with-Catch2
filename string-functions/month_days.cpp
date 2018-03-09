@@ -5,6 +5,7 @@
 #include "catch.hpp"
 
 std::string print_months(std::string file_name);
+std::string print_month(std::string file_line);
 
 TEST_CASE("Test print_months()", "Print the name and number days of the monts in the months file"){
   REQUIRE( print_months("months.txt") ==  "There are 31 days in January."
@@ -38,18 +39,34 @@ TEST_CASE("Test print_months() with financial months", "Print the name and numbe
 
 /*  String -> String
 *   Produces the formatted output of the months' info stored in the months.txt file
-*/  
+*/
 std::string print_months(std::string file_name){
   std::ifstream is(file_name);
-  std::string str="";
+  std::string file_line="";
   std::string result="";
   
-  while(getline(is, str))
+  while(getline(is, file_line))
   {
-    result += "There are 31 days in January.";
+    result += "There are 30 days in [" + print_month(file_line) + "].";
   }
     
   return result;
+}
+
+
+TEST_CASE("Test print_month()", "Prints the month, extracted of a file_line"){
+  REQUIRE( print_month("January 31") ==  "January");
+  REQUIRE( print_month("February 28") ==  "February");
+  REQUIRE( print_month("April 30") ==  "April");
+}
+
+/*  String -> String
+*   Extracts the month out of a file_line 
+*/
+std::string print_month(std::string file_line){
+  std::string month = "March";
+  
+  return month;
 }
 
 
