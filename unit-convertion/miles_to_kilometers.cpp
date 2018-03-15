@@ -36,5 +36,5 @@ TEST_CASE("Test kms_to_miles", "Given a distance in Kilometers, returns the dist
 *   Transform a distance in Kilometers to its equivalent in Miles
 */
 double kms_to_miles(double _kms){
-  return 0;
+  return _kms * 0.621371;
 }
