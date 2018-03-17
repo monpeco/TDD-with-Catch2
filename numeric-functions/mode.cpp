@@ -33,12 +33,13 @@ TEST_CASE("Test 1: int popular(int, int *)", "Test 1"){
 *   Calculate the most popular int (mode) in an int's array, given the array and its length
 */
 int popular(int numbers_size, int *numbers){
+  
   int order_numbers[numbers_size];
-  
-  sort_numbers(order_numbers, numbers, numbers_size);
-  
-  int result = popular_ordered(order_numbers, numbers_size);
+  sort_numbers(numbers_size, numbers, order_numbers);
+  int result = popular_ordered(numbers_size, order_numbers);
   
 	return result;
 }
+
+
 
