@@ -17,7 +17,8 @@ int main(){
   int length1{10};
   
   int most_popular = popular(length1, array1);
-  
+  std::cout << "most_popular: " << most_popular << std::endl;
+
   return 0;
 }
 
@@ -28,7 +29,7 @@ int popular(int numbers_size, int *numbers){
     std::cout << "numbers[" << i << "]: " << numbers[i] << std::endl;
   }
   
-  std::sort(numbers,numbers+10);
+  std::sort(numbers,numbers+numbers_size);
   int count{0}, popular_count{0}, most_popular{numbers[0]};
 
   std::cout << "sorted array: " << std::endl;
@@ -43,9 +44,6 @@ int popular(int numbers_size, int *numbers){
       }
     }
   }
-  
-  std::cout << "most_popular" << most_popular << std::endl;
-
   
 	return most_popular;
 }
