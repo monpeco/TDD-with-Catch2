@@ -34,11 +34,27 @@ TEST_CASE("Test 1: int popular(int, int *)", "Test 1"){
 */
 int popular(int numbers_size, int *numbers){
   
-  int order_numbers[numbers_size];
+  int result;
+  /*int order_numbers[numbers_size];
   sort_numbers(numbers_size, numbers, order_numbers);
-  int result = popular_ordered(numbers_size, order_numbers);
+  int result = popular_ordered(numbers_size, order_numbers);*/
+  std::sort(numbers,numbers+numbers_size);
+  int count{0}, popular_count{0}, most_popular{numbers[0]};
+
+  std::cout << "sorted array: " << std::endl;
+  for(int i=0; i<numbers_size-1; i++){
+    std::cout << "numbers[" << i << "]: " << numbers[i] << std::endl;
+    if(numbers[i] == numbers[i+1]){
+      count++;
+    }else{
+      if(count>popular_count){
+        popular_count = count;
+        most_popular = numbers[i];
+      }
+    }
+  }
   
-	return result;
+	return most_popular;
 }
 
 
