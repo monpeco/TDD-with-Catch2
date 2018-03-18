@@ -29,11 +29,23 @@ int popular(int numbers_size, int *numbers){
   }
   
   std::sort(numbers,numbers+10);
-  
+  int count{0}, popular_count{0}, most_popular{numbers[0]};
+
   std::cout << "sorted array: " << std::endl;
-  for(int i=0; i<numbers_size; i++){
+  for(int i=0; i<numbers_size-1; i++){
     std::cout << "numbers[" << i << "]: " << numbers[i] << std::endl;
+    if(numbers[i] == numbers[i+1]){
+      count++;
+    }else{
+      if(count>popular_count){
+        popular_count = count;
+        most_popular = numbers[i];
+      }
+    }
   }
   
-	return 0;
+  std::cout << "most_popular" << most_popular << std::endl;
+
+  
+	return most_popular;
 }
