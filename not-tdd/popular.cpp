@@ -41,6 +41,9 @@ int popular(int numbers_size, int *numbers){
       if(count>popular_count){
         popular_count = count;
         most_popular = numbers[i];
+        std::cout << "most_popular now is [" << most_popular << "]" 
+                  << " in position " << i << std::endl;
+
       }
     }
   }
