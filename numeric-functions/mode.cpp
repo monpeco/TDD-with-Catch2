@@ -46,11 +46,12 @@ int popular(int numbers_size, int *numbers){
     std::cout << "numbers[" << i << "]: " << numbers[i] << std::endl;
     if(numbers[i] == numbers[i+1]){
       count++;
-    }else{
       if(count>popular_count){
         popular_count = count;
         most_popular = numbers[i];
       }
+    }else{
+      count=0;
     }
   }
   
