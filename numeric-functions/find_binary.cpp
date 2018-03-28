@@ -16,6 +16,10 @@ Ej: 2, [“001001”, “111”], “1001001001110111“ => [[1, 4][9, 13]]
 
 int** find(int codes_size, char** codes, char* file);
 
+/* int, char**, char* -> int**
+*  Given a list of binary codes, inspects a binary file and Return the index 
+*  indicating the position where is a coincidence
+*/
 int** find(int codes_size, char** codes, char* file){
 
 	return nullptr;
