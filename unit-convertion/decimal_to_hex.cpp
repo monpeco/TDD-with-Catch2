@@ -12,6 +12,11 @@ TEST_CASE("Test base case", "Given a string that represents a series of decimal 
   REQUIRE( decimal_to_hex(rstr) == "");
 }
 
+TEST_CASE("Test decimal_to_hex", "Given a string that represents a series of decimal numbers, returns its hexadecimal represtation"){
+  std::string str("0");
+  std::string rstr = str;
+  REQUIRE( decimal_to_hex(rstr) == "0");
+}
 
 /*  string -> string
 *   Given a string that represents a series of decimal numbers, returns its hexadecimal represtation
