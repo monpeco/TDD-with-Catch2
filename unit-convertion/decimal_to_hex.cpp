@@ -5,6 +5,7 @@
 #include "catch.hpp"
 
 std::string decimal_to_hex( std::string &_decimal);
+std::string decimal_to_hex_digit( std::string &_decimal);
 
 TEST_CASE("Test base case", "Given a string that represents a series of decimal numbers, returns its hexadecimal represtation"){
   std::string str("");
@@ -52,3 +53,28 @@ std::string decimal_to_hex( std::string &_decimal){
   return "";
 }
 
+
+TEST_CASE("Test decimal_to_hex_digit case of 0", "Given a string that represents a single decimal digit, returns its hexadecimal represtation"){
+  std::string str("0");
+  std::string rstr = str;
+  REQUIRE( decimal_to_hex_digit(rstr) == "0");
+}
+
+TEST_CASE("Test decimal_to_hex_digit case of 7", "Given a string that represents a single decimal digit, returns its hexadecimal represtation"){
+  std::string str("7");
+  std::string rstr = str;
+  REQUIRE( decimal_to_hex_digit(rstr) == "7");
+}
+
+TEST_CASE("Test decimal_to_hex_digit case of 15", "Given a string that represents a single decimal digit, returns its hexadecimal represtation"){
+  std::string str("15");
+  std::string rstr = str;
+  REQUIRE( decimal_to_hex_digit(rstr) == "f");
+}
+
+/*  string -> string
+*   Given a string that represents a single decimal digit, returns its hexadecimal represtation
+*/
+std::string decimal_to_hex_digit( std::string &_decimal){
+  return "";
+}
