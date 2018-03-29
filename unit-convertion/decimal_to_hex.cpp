@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <sstream>
 #include "catch.hpp"
 
 std::string decimal_to_hex( std::string &_decimal);
@@ -76,5 +77,16 @@ TEST_CASE("Test decimal_to_hex_digit case of 15", "Given a string that represent
 *   Given a string that represents a single decimal digit, returns its hexadecimal represtation
 */
 std::string decimal_to_hex_digit( std::string &_decimal){
-  return "";
+  
+  const std::string hexdigits = "0123456789abcdef";
+  std::string::size_type n = 0;
+  char digit = 0;
+  std::stringstream(_decimal) >> n;
+  
+  if(n < hexdigits.size())
+    digit = hexdigits[n];
+    
+  std::string s(1, digit);
+
+  return s;
 }
