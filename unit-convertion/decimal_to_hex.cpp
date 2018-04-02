@@ -51,7 +51,30 @@ TEST_CASE("Test decimal_to_hex case of 1 0 9 15", "Given a string that represent
 *   Given a string that represents a series of decimal numbers, returns its hexadecimal represtation
 */
 std::string decimal_to_hex( std::string &_decimal){
-  return "";
+  
+  std::string word_decimal = "";
+  std::string delimiter = " ";
+  std::string result;
+
+  for(std::string::size_type n = 0; n < _decimal.size(); n++){
+    
+    if(_decimal.size() == 1){
+      result += decimal_to_hex_digit(_decimal);
+    }else{
+      if(_decimal[n] == ' ' || n == (_decimal.size() - 1) ){
+        result += decimal_to_hex_digit(word_decimal);
+        word_decimal="";
+        if(n<_decimal.size())
+          result += " ";
+      }else{
+        word_decimal += std::string(1,_decimal[n]);
+        
+      }
+    }
+
+  }
+  //std::string token = s.substr(0, s.find(delimiter)); 
+  return result;
 }
 
 
